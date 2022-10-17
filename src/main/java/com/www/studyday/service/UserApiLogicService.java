@@ -49,6 +49,7 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
 
     @Override
     public Header read(String LoginId) {
+        System.out.println("LoginId : " + LoginId);
         return userRepository.findByLoginId(LoginId)
             .map(user -> response(user))
             .orElseGet(
@@ -80,6 +81,7 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
                 .updatedAt(user.getUpdated_at())
                 .build();
 
+        //return Header.OK(userApiResponse);
         return Header.OK(userApiResponse);
     }
 }
