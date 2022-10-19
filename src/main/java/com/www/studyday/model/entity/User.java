@@ -18,10 +18,14 @@ public class User {
     private String loginId;
     private String password;
     private String name;
+    @Column(updatable=false)
     private int userType;
+    @Column(updatable=false)
     private LocalDateTime birth;
+    @Column(updatable=false)
     private int isLock;
     private String address;
+    @Column(updatable=false)
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
 }

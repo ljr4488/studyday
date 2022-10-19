@@ -59,7 +59,20 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
 
     @Override
     public Header<UserApiResponse> update(Header<UserApiRequest> request) {
-        return null;
+        System.out.println("UserApiLogicServices " + request);
+        //1. request data
+        UserApiRequest userApiRequest = request.getData();
+        //2. User 생성
+        User user = new User();
+        user.setUserId(userApiRequest.getUserId());
+        user.setLoginId(userApiRequest.getLoginId());
+        user.setPassword(userApiRequest.getPassword());
+        user.setName(userApiRequest.getName());
+        user.setAddress(userApiRequest.getAddress());
+        user.setUpdated_at(LocalDateTime.now());
+
+        User newUser = userRepository.save(user);
+        return response(newUser);
     }
 
     @Override

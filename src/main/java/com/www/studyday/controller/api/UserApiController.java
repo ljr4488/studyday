@@ -34,7 +34,8 @@ public class UserApiController implements CrudInterface<UserApiRequest, UserApiR
     @Override
     @PutMapping
     public Header<UserApiResponse> update(@RequestBody Header<UserApiRequest> request) {
-        return null;
+        System.out.println("{}" + request);
+        return userApiLogicService.update(request);
     }
 
     @Override

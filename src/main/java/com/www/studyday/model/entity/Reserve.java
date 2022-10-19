@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -33,5 +34,9 @@ public class Reserve {
     private int eleventh;
     private int twelfth;
     private int hirteenth;
+    private LocalDateTime reserveDay;
+    private LocalDateTime createdAt;
+    private Long delUserId;
+    private LocalDateTime deletedAt;
 
 }
