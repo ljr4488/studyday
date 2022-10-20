@@ -1,21 +1,17 @@
-package com.www.studyday.model.entity;
+package com.www.studyday.network.response;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
-@Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Table(name="reservemt")
-public class Reserve {
-    @Id
-    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+@AllArgsConstructor
+@Builder
+public class ReserveApiResponse {
     private Long reserveId;
     private Long roomId;
     private Long userId;

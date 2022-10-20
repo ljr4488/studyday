@@ -1,4 +1,4 @@
-package com.www.studyday.network.request;
+package com.www.studyday.network.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

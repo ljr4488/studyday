@@ -4,15 +4,13 @@ import com.www.studyday.controller.ifs.CrudInterface;
 import com.www.studyday.model.entity.User;
 import com.www.studyday.network.Header;
 import com.www.studyday.network.request.UserApiRequest;
-import com.www.studyday.network.request.UserApiResponse;
+import com.www.studyday.network.response.UserApiResponse;
 import com.www.studyday.repository.UserRepository;
-import lombok.Builder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Service
 public class UserApiLogicService implements CrudInterface<UserApiRequest, UserApiResponse> {
@@ -55,6 +53,11 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
             .orElseGet(
                     () -> Header.ERROR("데이터 없음")
             );
+    }
+
+    @Override
+    public Header read(Long roomId, LocalDate reserveDate) {
+        return null;
     }
 
     @Override
